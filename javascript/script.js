@@ -7,6 +7,10 @@ let loaderDOM = document.getElementById('loader')
 
 let loadingTimeout
 
+window.addEventListener('load', () => {
+  fetchPage('home.html')
+});
+
 window.addEventListener('popstate', () => {
   switch(history.state.page){
     case 0:
