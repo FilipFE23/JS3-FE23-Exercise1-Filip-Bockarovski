@@ -1,0 +1,15 @@
+*  {
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #333;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}

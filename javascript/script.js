@@ -3,6 +3,9 @@ let aboutDOM = document.getElementsByTagName('a')[1]
 let contactDOM = document.getElementsByTagName('a')[2]
 
 let contentDOM = document.getElementById('content')
+let loaderDOM = document.getElementById('loader')
+
+let loadingTimeout
 
 window.addEventListener('popstate', () => {
   switch(history.state.page){
@@ -33,10 +36,18 @@ contactDOM.addEventListener('click', (e) => {
   fetchPage('contact.html')
 })
 
-
 function fetchPage(filename) {
+  loadingTimeout = setTimeout(() => {
+    contentDOM.classList.add('hidden')
+    loaderDOM.classList.remove('hidden')
+  }, 300)
   if(typeof filename != 'string') return
   fetch(filename).then((results)=> {
     return results.text()
-  }).then((data)=>contentDOM.innerHTML = data)
+  }).then((data) => {
+    clearTimeout(loadingTimeout)
+    contentDOM.innerHTML = data
+    loaderDOM.classList.add('hidden')
+    contentDOM.classList.remove('hidden')
+  })
 }
