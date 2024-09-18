@@ -1,4 +1,5 @@
 *  {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -7,18 +8,38 @@ header {
   background-color: #333;
   color: white;
   display: flex;
-  text-align: center;
   justify-content: space-between;
   padding: 1rem;
 }
 
-nav ul {
+header div {
+  width: 33%;
+  display: flex;
+  align-items: center;
+}
+
+header div img {
+  width: 15%;
+}
+
+header div h1 {
+  text-align: center;
+  width: 100%;
+}
+
+header div nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+header div nav ul {
   display: flex;
   list-style: none;
 }
 
-nav ul li {
-  margin: 10px;
+header div nav ul li {
+  margin: 0 15px;
 }
 
 footer {
