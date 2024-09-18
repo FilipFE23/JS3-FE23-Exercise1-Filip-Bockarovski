@@ -26,6 +26,7 @@ window.addEventListener('popstate', () => {
 })
 
 homeDOM.addEventListener('click', (e) => {
+  e.preventDefault()
   history.pushState({page:0},'','/home')
   fetchPage('home.html')
 })
